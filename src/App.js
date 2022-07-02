@@ -2,7 +2,7 @@ import './App.css';
 import Home from './components/home';
 import logo from './images/rijksmuseum-logo.png';
 
-console.log(process.env.REACT_APP_SEARCH_API_KEY);
+// console.log(process.env.REACT_APP_SEARCH_API_KEY);
 
 function App() {
   return (

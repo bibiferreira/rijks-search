@@ -1,6 +1,7 @@
+import SearchBar from "./search-bar";
 
 export default function Home(props) {
   return (
-    <p>home</p>
+    <SearchBar />
   );
 }
