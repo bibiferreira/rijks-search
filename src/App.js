@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+// const API_KEY =`${process.env.REACT_APP_API_KEY_YT}`
+console.log(process.env.REACT_APP_SEARCH_API_KEY);
+
 function App() {
   return (
     <div className="App">
