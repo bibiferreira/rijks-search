@@ -5,7 +5,9 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
+    console.log(props);
 
+    this.externalAction = props.action;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -15,7 +17,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    this.externalAction(this.state.value);
     event.preventDefault();
   }
 

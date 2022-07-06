@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './components/home';
+import Home from './components/home/home';
 import logo from './images/rijksmuseum-logo.png';
 
 // console.log(process.env.REACT_APP_SEARCH_API_KEY);
