@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="SearchBar">
+      <div className="SearchBar" key="SearchBar">
         <form onSubmit={this.handleSubmit}>
           <div className="input-field">
             <input type="text" placeholder="What are you looking for?" value={this.state.value} onChange={this.handleChange} />
