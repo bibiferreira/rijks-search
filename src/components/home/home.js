@@ -1,4 +1,5 @@
 import React from "react";
+import './home.css';
 import SearchBar from "../search-bar/search-bar";
 import SearchCard from "../search-card/search-card";
 
@@ -23,8 +24,13 @@ class Home extends React.Component {
     return (
       <>
         <SearchBar action={this.search} />
-        <div>{this.cards()}</div>
+
+        <div className="search-results">
+          {this.cards()}
+        </div>
+
         {this.nextPageButton()}
+
         <p>Total results - {totalCount}</p>
       </>
     );

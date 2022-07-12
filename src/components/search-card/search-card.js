@@ -10,7 +10,12 @@ class SearchCard extends React.Component {
 
   render() {
     return (
-      <p>{this.state.object?.title}</p>
+      <div className="search-card">
+        <img src={this.state.object?.webImage.url} loading="lazy" />
+        <div className="details">
+          <p>{this.state.object?.longTitle}</p>
+        </div>
+      </div>
     );
   }
 }
