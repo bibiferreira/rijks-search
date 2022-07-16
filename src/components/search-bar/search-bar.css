@@ -5,28 +5,31 @@
 
 .SearchBar form {
   width: 100%;
-  max-width: 500px;
+  max-width: 90%;
   margin: 0 auto;
-  padding-bottom: 10px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .input-field {
-  height: 30px;
+  height: 40px;
   position: relative;
+  width: 50%;
+  background-color: transparent;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .input-field input {
-  width: 80%;
+  width: 90%;
   border: none;
   padding: 0;
   height: 100%;
   position: absolute;
   top: 0;
   display: flex;
-  background: transparent;
-  color: #fff;
+  background: white;
+  color: #000;
   font-size: 20px;
+  padding-left: 10px;
 }
 
 .input-field input:focus {
@@ -34,17 +37,18 @@
 }
 
 .input-field button {
-  width: 20%;
+  width: 10%;
   height: 100%;
   display: block;
   position: absolute;
-  left: 80%;
-  background: transparent;
+  left: 90%;
+  background: #d55140;
   color: #fff;
   -webkit-appearance: button;
   border: 0;
   padding: 0;
-  text-align: right;
+  text-align: center;
+  cursor: pointer;
 }
 
 .input-field button svg {

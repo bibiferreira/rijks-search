@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './components/home/home';
-import logo from './images/rijksmuseum-logo.png';
+import logo from './images/rijksmuseum-white.svg';
 
 // console.log(process.env.REACT_APP_SEARCH_API_KEY);
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <img src={logo} alt="rijksmuseum logo" />
+        <div className='logo-container'><img src={logo} alt="rijksmuseum logo" /></div>
       </header>
       <div>
         <Home />

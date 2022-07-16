@@ -17,10 +17,12 @@ class Home extends React.Component {
     };
     this.search = this.search.bind(this);
     this.loadNextPage = this.loadNextPage.bind(this);
+    this.nextPageButton = this.nextPageButton.bind(this);
+    this.searchFooter = this.searchFooter.bind(this);
+
   }
 
   render() {
-    const {totalCount} = this.state;
     return (
       <>
         <SearchBar action={this.search} />
@@ -29,9 +31,7 @@ class Home extends React.Component {
           {this.cards()}
         </div>
 
-        {this.nextPageButton()}
-
-        <p>Total results - {totalCount}</p>
+        {this.searchFooter()}
       </>
     );
   }
@@ -46,7 +46,18 @@ class Home extends React.Component {
 
   nextPageButton() {
     if(this.state.objects.length < this.state.totalCount) {
-      return (<button onClick={this.loadNextPage}>Load more ...</button>)
+      return (<button onClick={this.loadNextPage}>More results</button>)
+    }
+  }
+
+  searchFooter() {
+    if(this.state.term.length > 0) {
+      return (
+        <div className="search-footer">
+          <div className="button-wrapper">{this.nextPageButton()}</div>
+          <p>Showing {this.state.objects.length} of {this.state.totalCount} results</p>
+        </div>
+      );
     }
   }
 

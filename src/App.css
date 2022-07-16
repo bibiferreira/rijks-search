@@ -9,10 +9,23 @@
 }
 
 .App {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .App header {
-  text-align: center;
+  background-color: #000;
+  background-image: url(./images/header-bg.png);
+  background-position: 25% 8%;
+  height: 250px;
+}
+
+.App header .logo-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.App header .logo-container img {
+  width: 600px;
 }
