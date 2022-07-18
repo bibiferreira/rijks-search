@@ -6,11 +6,13 @@ class SearchCard extends React.Component {
     this.state = {
       object: props.object
     };
+    this.onSelection = props.onSelection;
+    this.onClick = this.onClick.bind(this);
   }
 
   render() {
     return (
-      <div className="search-card">
+      <div className="search-card" onClick={this.onClick}>
         <img src={this.state.object?.webImage.url} loading="lazy" />
         <div className="details">
           <p>{this.state.object?.longTitle}</p>
@@ -18,6 +20,12 @@ class SearchCard extends React.Component {
       </div>
     );
   }
+
+  onClick() {
+    this.onSelection(this.state.object);
+  }
 }
+
+
 
 export default SearchCard;
