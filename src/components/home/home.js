@@ -15,8 +15,7 @@ class Home extends React.Component {
       currentPage: startingPage,
       totalCount: 0,
       objects: [],
-      selected: null,
-      showDetails: false
+      selected: null
     };
     this.search = this.search.bind(this);
     this.loadNextPage = this.loadNextPage.bind(this);
@@ -31,7 +30,7 @@ class Home extends React.Component {
       <>
         <SearchBar action={this.search} />
 
-        <Details show={this.state.showDetails} object={this.state.selected} handleClose={this.hideDetails} />
+        {this.details()}
 
         <div className="search-results">
           {this.cards()}
@@ -50,18 +49,21 @@ class Home extends React.Component {
     return cards;
   }
 
+  details() {
+    if (this.state.selected != null) {
+      return (<Details object={this.state.selected} handleClose={this.hideDetails} />);
+    }
+  }
+
   openDetails(object) {
-    console.log(object);
     let originalState = this.state;
     originalState.selected = object;
-    originalState.showDetails = true;
+    console.log(originalState);
     this.setState(originalState);
   }
 
   hideDetails() {
-    console.log('hide details');
     let originalState = this.state;
-    originalState.showDetails = false;
     originalState.selected = null;
     this.setState(originalState);
   }
@@ -85,25 +87,23 @@ class Home extends React.Component {
 
   search(term) {
     this.loadResults(term, startingPage, (result) => {
-      this.setState({
-        term: term,
-        currentPage: startingPage,
-        totalCount: result.count,
-        objects: result.artObjects
-      });
+      let originalState = this.state;
+      originalState.term = term;
+      originalState.currentPage = startingPage;
+      originalState.totalCount = result.count;
+      originalState.objects = result.artObjects;
+      console.log(result);
+      this.setState(originalState);
     });
   }
 
   loadNextPage() {
     const nextPage = this.state.currentPage + 1;
-    let currentResults = this.state.objects;
     this.loadResults(this.state.term, nextPage, (result) => {
-      this.setState({
-        term: this.state.term,
-        currentPage: nextPage,
-        totalCount: this.state.totalCount,
-        objects: currentResults.concat(result.artObjects)
-      });
+      let originalState = this.state;
+      originalState.currentPage = nextPage;
+      originalState.objects = originalState.objects.concat(result.artObjects)
+      this.setState(originalState);
     });
   }
 

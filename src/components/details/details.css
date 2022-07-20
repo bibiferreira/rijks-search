@@ -58,3 +58,31 @@
   cursor: pointer;
   aspect-ratio: 1;
 }
+
+.extended-details {
+  margin-top: 20px;
+}
+
+.extended-details ul li {
+  line-height: 3;
+  padding-right: 10px;
+}
+
+.extended-details ul li p {
+  line-height: 1.2;
+  font-size: 15px;
+}
+
+.extended-details ul li strong {
+  font-weight: 500;
+}
+
+.extended-details ul li a {
+  text-decoration: underline;
+  color: #6e7074;
+}
+
+.author {
+  color: #6e7074;
+  font-weight: 500;
+}
