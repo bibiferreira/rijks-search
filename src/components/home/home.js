@@ -116,10 +116,7 @@ class Home extends React.Component {
           resultHandler(result);
         },
         (error) => {
-          // this.setState({
-          //   isLoaded: true,
-          //   error
-          // });
+          
         }
       )
   }

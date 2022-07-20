@@ -73,10 +73,7 @@ class Details extends React.Component {
           });
         },
         (error) => {
-          // this.setState({
-          //   isLoaded: true,
-          //   error
-          // });
+          
         }
       )
   }
